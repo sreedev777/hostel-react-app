@@ -5,6 +5,7 @@ import NavigationBar from './NavigationBar'
 const ViewStudent = () => {
 
     const [data, changeData] = useState([])
+    const [searchTerm, setSearchTerm] = useState("")
     const [selectedStudent, setSelectedStudent] = useState(null)
     const [showModal, setShowModal] = useState(false)
 
@@ -83,6 +84,16 @@ const ViewStudent = () => {
                                 🏨 View Students
                             </h2>
 
+                            <div className="mb-3 mt-3">
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="Search students by name, ID, department, block, room, or warden"
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                />
+                            </div>
+
                             <table className="table table-striped">
                                 <thead>
                                     <tr>
@@ -103,6 +114,40 @@ const ViewStudent = () => {
                                 </thead>
                                 <tbody>
 
+                                    {data.filter((item) => {
+                                        const term = searchTerm.toLowerCase()
+                                        return (
+                                            item.admissionId?.toString().toLowerCase().includes(term) ||
+                                            item.studentID?.toString().toLowerCase().includes(term) ||
+                                            item.name?.toString().toLowerCase().includes(term) ||
+                                            item.gender?.toString().toLowerCase().includes(term) ||
+                                            item.dept?.toString().toLowerCase().includes(term) ||
+                                            item.year?.toString().toLowerCase().includes(term) ||
+                                            item.hostelBlock?.toString().toLowerCase().includes(term) ||
+                                            item.roomNo?.toString().toLowerCase().includes(term) ||
+                                            item.parentName?.toString().toLowerCase().includes(term) ||
+                                            item.parentNo?.toString().toLowerCase().includes(term) ||
+                                            item.date?.toString().toLowerCase().includes(term) ||
+                                            item.wardenName?.toString().toLowerCase().includes(term)
+                                        )
+                                    }).map((data, index) => {
+                                        return (
+                                            <tr key={index}>
+                                                <td>{data.admissionId}</td>
+                                                <td>{data.studentID}</td>
+                                                <td>{data.name}</td>
+                                                <td>{data.gender}</td>
+                                                <td>{data.dept}</td>
+                                                <td>{data.year}</td>
+                                                <td>{data.hostelBlock}</td>
+                                                <td>{data.roomNo}</td>
+                                                <td>{data.parentName}</td>
+                                                <td>{data.parentNo}</td>
+                                                <td>{data.date}</td>
+                                                <td>{data.wardenName}</td>
+                                            </tr>
+                                        )
+                                    })}
                                     {data.map(
 
                                         (data, index) => {
