@@ -7,16 +7,26 @@ import AddStudent from './components/AddStudent'
 import Home from './components/home'
 import NavigationBar from './components/NavigationBar'
 import LoginAdd from './components/LoginAdd'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import ViewLogout from './components/ViewLogout'
+import ViewStudent from './components/ViewStudent'
+import AddLogout from './components/AddLogout'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <Home/>
-      <AddStudent/>
-      <NavigationBar/>
-      <LoginAdd/>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/viewlogout' element={<ViewLogout/>}/>
+      <Route path='/viewstudent' element={<ViewStudent/>}/>
+      <Route path='/addstudent' element={<AddStudent/>}/>
+      <Route path='/addlogout' element={<AddLogout/>}/>
+
+    </Routes>
+    </BrowserRouter>
     </>
   )
 }
