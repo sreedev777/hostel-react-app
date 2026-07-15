@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import NavigationBar from './NavigationBar';
 
 const LoginAdd = () => {
     const [input, changeInput] = useState({
@@ -27,6 +28,7 @@ const LoginAdd = () => {
     ).catch()
   }
   return (
+    <><NavigationBar/>
     <div className="container mt-4">
     <div className="row g-3">
 
@@ -160,6 +162,7 @@ const LoginAdd = () => {
 
     </div>
 </div>
+</>
   )
 }
 
