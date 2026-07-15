@@ -18,7 +18,7 @@ const NavigationBar = () => {
                             fontFamily: "Poppins, sans-serif"
                         }}
                     >
-                        🏨 HOSTEL MANAGEMENT SYSTEM
+                        🏨HOSTEL MANAGEMENT SYSTEM
                     </a>
 
                     <button
@@ -34,23 +34,83 @@ const NavigationBar = () => {
 
                         <div className="navbar-nav flex-nowrap">
 
-                            <a className="nav-link text-white fw-semibold mx-2 text-nowrap" href="/">🏠 Home</a>
+                            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                <div className="navbar-nav ms-auto">
 
-                            <a className="nav-link text-white fw-semibold mx-2 text-nowrap" href="/addstudent">➕ Add Student</a>
+                                    <a
+                                        className="nav-link text-white fw-semibold px-2 text-nowrap"
+                                        style={{ fontSize: "14px" }}
+                                        href="/"
+                                    >
+                                        🏠Home
+                                    </a>
 
-                            <a className="nav-link text-white fw-semibold mx-2 text-nowrap" href="/viewstudent">👨‍🎓 View Students</a>
+                                    <a
+                                        className="nav-link text-white fw-semibold px-2 text-nowrap"
+                                        style={{ fontSize: "14px" }}
+                                        href="/addstudent"
+                                    >
+                                        ➕Add Student
+                                    </a>
 
-                            <a className="nav-link text-white fw-semibold mx-2 text-nowrap" href="/addlogin">🔐 Add Login</a>
+                                    <a
+                                        className="nav-link text-white fw-semibold px-2 text-nowrap"
+                                        style={{ fontSize: "14px" }}
+                                        href="/viewstudent"
+                                    >
+                                        👨‍🎓View Students
+                                    </a>
 
-                            <a className="nav-link text-white fw-semibold mx-2 text-nowrap" href="/viewlogin">👤 View Login</a>
+                                    <a
+                                        className="nav-link text-white fw-semibold px-2 text-nowrap"
+                                        style={{ fontSize: "14px" }}
+                                        href="/addlogin"
+                                    >
+                                        🔐Add Login
+                                    </a>
 
-                            <a className="nav-link text-white fw-semibold mx-2 text-nowrap" href="/addlogout">🚪 Add Logout</a>
+                                    <a
+                                        className="nav-link text-white fw-semibold px-2 text-nowrap"
+                                        style={{ fontSize: "14px" }}
+                                        href="/viewlogin"
+                                    >
+                                        👤View Login
+                                    </a>
 
-                            <a className="nav-link text-white fw-semibold mx-2 text-nowrap" href="/viewlogout">📄 View Logout</a>
+                                    <a
+                                        className="nav-link text-white fw-semibold px-2 text-nowrap"
+                                        style={{ fontSize: "14px" }}
+                                        href="/addlogout"
+                                    >
+                                        🚪Add Logout
+                                    </a>
 
-                            <a className="nav-link text-white fw-semibold mx-2 text-nowrap" href="/addleave">📝 Add Leave</a>
+                                    <a
+                                        className="nav-link text-white fw-semibold px-2 text-nowrap"
+                                        style={{ fontSize: "14px" }}
+                                        href="/viewlogout"
+                                    >
+                                        📄View Logout
+                                    </a>
 
-                            <a className="nav-link text-white fw-semibold mx-2 text-nowrap" href="/viewleave">📋 View Leave</a>
+                                    <a
+                                        className="nav-link text-white fw-semibold px-2 text-nowrap"
+                                        style={{ fontSize: "14px" }}
+                                        href="/addleave"
+                                    >
+                                        📝Add Leave
+                                    </a>
+
+                                    <a
+                                        className="nav-link text-white fw-semibold px-2 text-nowrap"
+                                        style={{ fontSize: "14px" }}
+                                        href="/viewleave"
+                                    >
+                                        📋View Leave
+                                    </a>
+
+                                </div>
+                            </div>
 
                         </div>
 
