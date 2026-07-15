@@ -7,6 +7,7 @@ import AddStudent from './components/AddStudent'
 import Home from './components/home'
 import NavigationBar from './components/NavigationBar'
 import LoginAdd from './components/LoginAdd'
+import LogView from './components/LogView'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
       <AddStudent/>
       <NavigationBar/>
       <LoginAdd/>
+      <LogView/>
     </>
   )
 }
