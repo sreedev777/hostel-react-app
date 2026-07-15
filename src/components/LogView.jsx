@@ -4,6 +4,7 @@ import NavigationBar from './NavigationBar'
 
 const LogView = () => {
     const [data,ChangeData]=useState([])
+    const [searchTerm,setSearchTerm]=useState("")
 
         const fetchData=()=>{
         axios.get("http://localhost:3000/login-view").then(
@@ -25,6 +26,15 @@ const LogView = () => {
 
     <div className="row mt-4">
       <div className="col-12">
+        <div className="mb-3">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Search login records by student name, ID, block, department, or attendance"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
         <div className="table-responsive">
           <table className="table table-bordered table-striped">
             <thead className="table-primary">
@@ -43,7 +53,21 @@ const LogView = () => {
             </thead>
 
             <tbody>
-              {data.map((value, index) => (
+              {data.filter((item) => {
+                const term = searchTerm.toLowerCase()
+                return (
+                  item.loginId?.toString().toLowerCase().includes(term) ||
+                  item.studentId?.toString().toLowerCase().includes(term) ||
+                  item.studentName?.toString().toLowerCase().includes(term) ||
+                  item.hostelBlock?.toString().toLowerCase().includes(term) ||
+                  item.roomNumber?.toString().toLowerCase().includes(term) ||
+                  item.department?.toString().toLowerCase().includes(term) ||
+                  item.yearOfStudy?.toString().toLowerCase().includes(term) ||
+                  item.loginDate?.toString().toLowerCase().includes(term) ||
+                  item.loginTime?.toString().toLowerCase().includes(term) ||
+                  item.attendanceStatus?.toString().toLowerCase().includes(term)
+                )
+              }).map((value, index) => (
                 <tr key={index}>
                   <td>{value.loginId}</td>
                   <td>{value.studentId}</td>
