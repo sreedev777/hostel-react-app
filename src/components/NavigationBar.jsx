@@ -6,7 +6,7 @@ const NavigationBar = () => {
 
             <nav
                 className="navbar navbar-expand-lg navbar-dark shadow"
-                style={{ background: "linear-gradient(to right, #25284d, #1b423e)" }}
+                style={{ background: "linear-gradient(to right, #0F766E, #14B8A6)" }}
             >
                 <div className="container-fluid px-4">
 

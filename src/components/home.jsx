@@ -10,7 +10,7 @@ const Home = () => {
                 className="d-flex align-items-center"
                 style={{
                     minHeight: "100vh",
-                    background: "linear-gradient(to right, #899ee6, #14B8A6)",
+                    background: "linear-gradient(to right, #0F766E, #14B8A6)",
                     color: "white",
                     paddingTop: "80px"
                 }}
