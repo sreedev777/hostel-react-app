@@ -136,48 +136,27 @@ const ViewLogout = () => {
                                             item.purpose?.toString().toLowerCase().includes(term) ||
                                             item.returnTime?.toString().toLowerCase().includes(term)
                                         )
-                                    }).map((data, index) => {
+                                    }).map((item, index) => {
                                         return (
-                                            <tr key={index}>
-                                                <td>{data.logoutId}</td>
-                                                <td>{data.studentID}</td>
-                                                <td>{data.name}</td>
-                                                <td>{data.block}</td>
-                                                <td>{data.roomNo}</td>
-                                                <td>{data.dept}</td>
-                                                <td>{data.year}</td>
-                                                <td>{data.logoutTime}</td>
-                                                <td>{data.logoutDate}</td>
-                                                <td>{data.purpose}</td>
-                                                <td>{data.returnTime}</td>
+                                            <tr key={item._id || index}>
+                                                <td>{item.logoutId}</td>
+                                                <td>{item.studentID}</td>
+                                                <td>{item.name}</td>
+                                                <td>{item.block}</td>
+                                                <td>{item.roomNo}</td>
+                                                <td>{item.dept}</td>
+                                                <td>{item.year}</td>
+                                                <td>{item.logoutTime}</td>
+                                                <td>{item.logoutDate}</td>
+                                                <td>{item.purpose}</td>
+                                                <td>{item.returnTime}</td>
+                                                <td>
+                                                    <button className="btn btn-warning btn-sm" onClick={() => editLogout(item)}>Edit</button>{' '}
+                                                    <button className="btn btn-danger btn-sm" onClick={() => deleteLogout(item._id)}>Delete</button>
+                                                </td>
                                             </tr>
                                         )
                                     })}
-                                    {data.map(
-
-                                        (data, index) => {
-                                            return (
-                                                <tr key={index}>
-                                                    <td>{data.logoutId}</td>
-                                                    <td>{data.studentID}</td>
-                                                    <td>{data.name}</td>
-                                                    <td>{data.block}</td>
-                                                    <td>{data.roomNo}</td>
-                                                    <td>{data.dept}</td>
-                                                    <td>{data.year}</td>
-                                                    <td>{data.logoutTime}</td>
-                                                    <td>{data.logoutDate}</td>
-                                                    <td>{data.purpose}</td>
-                                                    <td>{data.returnTime}</td>
-                                                    <td>
-                                                        <button className="btn btn-warning btn-sm" onClick={() => editLogout(data)}>Edit</button>{' '}
-                                                        <button className="btn btn-danger btn-sm" onClick={() => deleteLogout(data._id)}>Delete</button>
-                                                    </td>
-                                                </tr>
-                                            )
-                                        }
-
-                                    )}
 
                                 </tbody>
                             </table>

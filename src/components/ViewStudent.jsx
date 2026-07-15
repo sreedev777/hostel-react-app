@@ -130,50 +130,28 @@ const ViewStudent = () => {
                                             item.date?.toString().toLowerCase().includes(term) ||
                                             item.wardenName?.toString().toLowerCase().includes(term)
                                         )
-                                    }).map((data, index) => {
+                                    }).map((item, index) => {
                                         return (
-                                            <tr key={index}>
-                                                <td>{data.admissionId}</td>
-                                                <td>{data.studentID}</td>
-                                                <td>{data.name}</td>
-                                                <td>{data.gender}</td>
-                                                <td>{data.dept}</td>
-                                                <td>{data.year}</td>
-                                                <td>{data.hostelBlock}</td>
-                                                <td>{data.roomNo}</td>
-                                                <td>{data.parentName}</td>
-                                                <td>{data.parentNo}</td>
-                                                <td>{data.date}</td>
-                                                <td>{data.wardenName}</td>
+                                            <tr key={item._id || index}>
+                                                <td>{item.admissionId}</td>
+                                                <td>{item.studentID}</td>
+                                                <td>{item.name}</td>
+                                                <td>{item.gender}</td>
+                                                <td>{item.dept}</td>
+                                                <td>{item.year}</td>
+                                                <td>{item.hostelBlock}</td>
+                                                <td>{item.roomNo}</td>
+                                                <td>{item.parentName}</td>
+                                                <td>{item.parentNo}</td>
+                                                <td>{item.date}</td>
+                                                <td>{item.wardenName}</td>
+                                                <td>
+                                                    <button className="btn btn-warning btn-sm" onClick={() => editStudent(item)}>Edit</button>{' '}
+                                                    <button className="btn btn-danger btn-sm" onClick={() => deleteStudent(item._id)}>Delete</button>
+                                                </td>
                                             </tr>
                                         )
                                     })}
-                                    {data.map(
-
-                                        (data, index) => {
-                                            return (
-                                                <tr key={index}>
-                                                    <td>{data.admissionId}</td>
-                                                    <td>{data.studentID}</td>
-                                                    <td>{data.name}</td>
-                                                    <td>{data.gender}</td>
-                                                    <td>{data.dept}</td>
-                                                    <td>{data.year}</td>
-                                                    <td>{data.hostelBlock}</td>
-                                                    <td>{data.roomNo}</td>
-                                                    <td>{data.parentName}</td>
-                                                    <td>{data.parentNo}</td>
-                                                    <td>{data.date}</td>
-                                                    <td>{data.wardenName}</td>
-                                                    <td>
-                                                        <button className="btn btn-warning btn-sm" onClick={() => editStudent(data)}>Edit</button>{' '}<br/>
-                                                        <button className="btn btn-danger btn-sm" onClick={() => deleteStudent(data._id)}>Delete</button>
-                                                    </td>
-                                                </tr>
-                                            )
-                                        }
-
-                                    )}
 
                                 </tbody>
                             </table>
