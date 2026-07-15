@@ -25,6 +25,8 @@ function App() {
       <Route path='/viewstudent' element={<ViewStudent/>}/>
       <Route path='/addstudent' element={<AddStudent/>}/>
       <Route path='/addlogout' element={<AddLogout/>}/>
+      <Route path='/addlogin' element={<LoginAdd/>}/>
+      <Route path='/viewlogin' element={<LogView/>}/>
 
     </Routes>
     </BrowserRouter>
